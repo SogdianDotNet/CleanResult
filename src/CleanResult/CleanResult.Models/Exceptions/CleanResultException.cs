@@ -1,6 +1,15 @@
 ﻿namespace CleanResult.Models.Exceptions;
 
-public class CleanResultException
+/// <inheritdoc />
+[Serializable]
+public sealed class CleanResultException : Exception
 {
-    
+    public readonly IReadOnlyCollection<ErrorMessage> Errors = [];
+
+    public CleanResultException(string message) : base(message) { }
+
+    public CleanResultException(string message, IReadOnlyCollection<ErrorMessage> errors) : base(message)
+    {
+        Errors = errors;
+    }
 }

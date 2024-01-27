@@ -1,3 +1,5 @@
-﻿namespace CleanResult.Models;
+﻿using CleanResult.Models.Interfaces;
 
-public record ErrorMessage();
+namespace CleanResult.Models;
+
+public record ErrorMessage(string Code, string Message) : IErrorMessage;

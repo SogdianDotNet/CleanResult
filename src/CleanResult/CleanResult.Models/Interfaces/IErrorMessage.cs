@@ -1,6 +1,7 @@
 ﻿namespace CleanResult.Models.Interfaces;
 
-public interface IErrorMessage
+internal interface IErrorMessage
 {
-    
+    string Code { get; init; }
+    string Message { get; init; }
 }
